@@ -1,4 +1,4 @@
-# Welcome to MkDocs
+# Welcome to AMS2 docs
 
 For full documentation visit [mkdocs.org](https://www.mkdocs.org).
 
