@@ -1,5 +1,6 @@
 # Welcome to AMS2 docs
 
+wip site
 For full documentation visit [mkdocs.org](https://www.mkdocs.org).
 
 ## Commands
