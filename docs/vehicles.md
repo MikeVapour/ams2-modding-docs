@@ -3,6 +3,10 @@
 Project CARS/ AMS2
 Translation for porsche_991_gt3rs.vdfm
 By JDougNY
+
+Translation for fordsgt.vdfm
+by gvse
+
 Version 1.0 - October 8, 2018 - Initial release
 AMS2 additions by gvse
 
@@ -20,25 +24,48 @@ AMS2 additions by gvse
 
 0x010-0x013 = 98010000 = 408// (Integer) Byte Length of offset/data section. Count from 0x030-0x1C7
 
+___
+
+**AMS2**
+0x010-0x013 = 98010000 = 424// (Integer) Byte Length of offset/data section. Count from 0x030-0x1C7
+
+___
+
 0x15 = 08 // (byte) number of empty bytes after data section.  0x1C8-0x1CF
+
+___
+
+**AMS2**
+
+0x15 = 08 // (byte) number of empty bytes after data section.  0x1D8-0x1DF
+
+___
 
 0x018-0x01B = 12000000 = 18 // (Integer) Byte length of String data Section. 0x1D0-0x1E1      
 
-If additional bytes are inserted into the string data section, this register
-is incremented accordingly.
+**If additional bytes are inserted into the string data section, this register
+is incremented accordingly.**
 
 0x01D = 0E = 14 // (Byte) number of empty bytes after String data section. 0x1E2-0x1EF          
-Any changes to String Data section requires a check of remaining empty bytes.
-There is always one "zero" byte after last entry.  Empty byte count does not include
-that last "zero" byte.
 
-0x020 = 30 = 48 // (Byte) Byte length of Data Map. 0x1F0-0x21F
 
-0x025 = 00 // (Byte) number of empty bytes after the Data Map.
+**AMS2**
 
-0x028 = 0C = 12 // (Byte) Byte length of end section. 0x220-0x22B
+0x01D = 01 = 1 // (Byte) number of empty bytes after String data section. 0x21F-0x21F
 
-0x02D = 04 // (Byte) number of empty bytes after the end section. 0x22C-0x22F
+
+**Any changes to String Data section requires a check of remaining empty bytes.
+There is always one zero byte after last entry.  Empty byte count does not include
+that last zero byte.**
+
+**AMS2**
+0x020 = 30 = 48 // (Byte) Byte length of Data Map Offsets. 0x220-0x25F
+
+0x025 = 00 // (Byte) number of empty bytes after the Data Map Offsets.
+
+0x028 = 0C = 12 // (Byte) Byte length of end section. 0x2260-0x26B
+
+0x02D = 04 // (Byte) number of empty bytes after the end section. 0x26C-0x26F
 
 
 ## data section
@@ -57,6 +84,15 @@ Offset 20 of Data Map]
 
 0x050-0x053 = XX000000 = // (Integer) Location in string data for turbo filename (*.TBFBIN)
   If Data Map does not call for Offset 20, then no turbo/supercharger is utilized.
+  
+___
+
+AMS2
+0x050-0x053 = XX000000 = // (Integer) Location in string data for clutches filename (*.CBFBIN)
+  If Data Map does not call for Offset 20, then no clutches is utilized.
+
+for other AMS2 offests see the [data map offsets section](#DATA-MAP-SECTION-for-AMS2)
+___
 
 [Offset 30 of Data Map]
 
