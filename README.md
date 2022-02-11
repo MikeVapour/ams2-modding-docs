@@ -1,0 +1,1 @@
+# ams2-modding-docs
