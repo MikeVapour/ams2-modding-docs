@@ -3,9 +3,6 @@ site_name: AMS2 modding docs
 # Configuration
 theme:
   name: material
- 
-
- 
   # Default values, taken from mkdocs_theme.yml
   language: en
   features:
@@ -27,7 +24,7 @@ theme:
     # - toc.integrate
   palette:
     - scheme: default
-      primary: indigo
+      primary: black
       accent: indigo
       toggle:
         icon: material/toggle-switch
