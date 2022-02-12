@@ -68,47 +68,79 @@ that last zero byte.**
 0x02D = 04 // (Byte) number of empty bytes after the end section. 0x26C-0x26F
 
 
-## data section
+## AMS2 data section
 
-[DATA SECTION - 0x030-0x1C7]
+### calls to physics files
+
+**[DATA SECTION - 0x030-0x1D8]**
 
 [Offset 08 of Data Map]
 
 0x038-0x03B = XX000000 = 0 // (Integer) Location in string data for Chassis filename (*.CDFBIN)
 
+___
+
 [Offset 18 of Data Map]
 
 0x048-0x04B = XX000000 = 0 // (Integer) Location in string data for Engine filename (*.EDFBIN)
 
-Offset 20 of Data Map]
 
-0x050-0x053 = XX000000 = // (Integer) Location in string data for turbo filename (*.TBFBIN)
+___
+
+[Offset 20 of Data Map]
+
+
+**PC2 location of turbo: this and the following entries change in AMS2 1.3.3.0**
+
+0x050-0x053 = XX000000 = // (Integer) **PC2** Location in string data for turbo filename (*.TBFBIN)
   If Data Map does not call for Offset 20, then no turbo/supercharger is utilized.
+  
+
+**AMS2**
+
+[Offset 20 of Data Map]
+
+0x050-0x053 = XX000000 = // (Integer) Location in string data for **clutches** filename (*.CBFBIN)
+  If Data Map does not call for Offset 20, then no clutches is utilized.
+
+for other AMS2 offsets see the [data map offsets section](#DATA-MAP-SECTION-for-AMS2)
+___
+
+[Offset 28 of Data Map]
+
+0x058-0x05B = XX000000 = // (Integer)  Location in string data for turbo filename (*.TBFBIN)
+  If Data Map does not call for Offset 20, then no turbo/supercharger is utilized.
+  
   
 ___
 
-AMS2
-0x050-0x053 = XX000000 = // (Integer) Location in string data for clutches filename (*.CBFBIN)
-  If Data Map does not call for Offset 20, then no clutches is utilized.
-
-for other AMS2 offests see the [data map offsets section](#DATA-MAP-SECTION-for-AMS2)
-___
-
-[Offset 30 of Data Map]
-
-0x060-0x063 = XX000000 = 0 // (Integer) Location in string data for Gearbox filename (*.GDFBIN)
-
 [Offset 38 of Data Map]
 
-0x068-0x06B = XX000000 = 0 // (Integer) Location in string data for Suspension filename (*.SDFBIN)
+0x068-0x06B = XX000000 = 0 // (Integer) Location in string data for Gearbox filename (*.GDFBIN)0 // 
+
+___
 
 [Offset 40 of Data Map]
 
-0x070-0x073 = XX000000 = 0 // (Integer) Location in string data for Collision filenames (*.XML)
+0x070-0x073 = XX000000 = 0 // (Integer) Location in string data for Suspension filename (*.SDFBIN)
+
+
+___
 
 [Offset 48 of Data Map]
 
-0x078-0x07B = XX000000 = 0 // (Integer) Location in string data for Tyre filename (*.HDTBIN)
+0x078-0x07B = XX000000 = 0 // (Integer) Location in string data for Collision filenames (*.XML)
+
+___
+
+[Offset 50 of Data Map]
+
+0x080-0x084 = XX000000 = 0 // (Integer) Location in string data for Tyre filename (*.HDTBIN)
+
+
+
+
+### wheel and tire setup
 
 0x088-0x08B = B072483F = 0.783 // (Float) FL Wheel/Tyre lateral offset in Meters
 
@@ -151,16 +183,28 @@ ___
 0x0D4-0x0D7 = 48E13A3F = 0.730 // (Float) RR Tyre height in Meters
 
 
-## Offset B8 in Data Map
+## Offsets B8 and C0 in Data Map
 
 0x0E8-0x0EB = XX000000 = // (Integer) Location in string data for KERS,DRS and Hybrid filename (*.BBFBIN)
-  If Data Map does not call for Offset B8, then no *.BFFBIN is utilized.
 
-0x130-0x0133 = 00400344 = 525.0  // (Float) Brake Disc Glow Min (Start to glow slightly)
+If Data Map does not call for Offset B8, then no *.BFFBIN is utilized.
+___
 
-0x134-0x0137 = 00007A44 = 1000.0 // (Float) Brake Disc Glow Max (Full glow effect)
+0x0C0-0x0C4 = XX000000 = // (Integer) Location in string data for *Push to Pass* filename
 
-0x138-0x013B = 0000803F = 1.0       // (Float) ??
+If Data Map does not call for Offset C0, then no *.BFFBIN is utilized.
+  
+___
+
+## brake discs
+
+0x138-0x013B = 00400344 = 525.0  // (Float) Brake Disc Glow Min (Start to glow slightly)
+
+0x13C-0x013F = 00007A44 = 1000.0 // (Float) Brake Disc Glow Max (Full glow effect)
+
+## unknown
+
+0x140-0x0144 = 0000803F = 1.0       // (Float) ??
 
 0x13C-0x013F = 0000803F = 1.0       // (Float) ??
 
@@ -236,6 +280,10 @@ ___
 
 0x1CC-0x1CF = 00000000 = 0
 
+0x1D0-0x1D7 = unknown
+
+0x1D8-0x1DF = 8 empty bytes before the string section
+
 !!! note
 
 	From this point onward the adddresses can change, due to both the
@@ -256,53 +304,22 @@ ___
 
 ## STRING DATA SECTION
 
-0x1D0-0x1E1 = porsche_991_gt3rs // String Data Section.  Since there
-  is only one entry, anything called by data map will look for this text
-  for each physics file type.  There is always one "zero" byte after each
-  entry in this section.
+0x1E0-0x21E = fordsgt String Data Section.
 
-0x1E2-0x1EF = 0000000000000000000000000000 // empty bytes for String Data section.
-  These bytes are ignored, unless offsets 0x018 and 0x01D are adjusted.
+``fordsgt`` = 8 bytes (``fordsgt.`` or ``fordsgt00``) starts at byte 0 of the string section
 
-## DATA MAP SECTION for PC2
+``GT_Cup`` clutches entry starts at byte 27
 
+``chevrolet_corvette_c7_z06`` tire starts at byte 37
 
-This section performs parsing of the String Data Section, per the offsets
-defined within this section.
+This string section has the total of 63 bytes. There is 1 empty byte before the Data Map Offsets section.
 
-The Offset Values are as follows:
+Anything called by data map will look for this text for each physics file type.  There is always one "zero" byte after each entry in this section.
 
-``08`` = 0x038 = Chassis file lookup // In all VDFM
+0x21E-0x21F =  // empty bytes for String Data section.
 
-``18`` = 0x048 = Engine file lookup  // In all VDFM
+These bytes are ignored, unless offsets 0x018 and 0x01D are adjusted.
 
-``20`` = 0x050 = Turbo file lookup   // only when needed
-
-``30`` = 0x060 = Gearbox file lookup // In all VDFM
-
-``38`` = 0x068 = Suspension file lookup // In all VDFM
-
-``40`` = 0x070 = Collision file lookup  // In all VDFM
-
-``48`` = 0x078 = Tyre file lookup    // In all VDFM
-
-``B8`` = 0x0E8 = KERS, DRS, Hybrid file lookup // only when needed
-
-___
-
-Actual Data Map for this VDFM
-
-0x1F0 = 08 = 0x038 = Chassis file lookup
-
-0x1F8 = 18 = 0x048 = Engine file lookup
-
-0x200 = 30 = 0x060 = Gearbox file lookup
-
-0x208 = 38 = 0x068 = Suspension file lookup
-
-0x210 = 40 = 0x070 = Collision file lookup
-
-0x218 = 48 = 0x078 = Tyre file lookup
 
 
 ## DATA MAP SECTION for AMS2
@@ -311,11 +328,9 @@ Actual Data Map for this VDFM
 
 18 = 0x048 = Engine file lookup  // In all VDFM
 
-20 = 0x050 = *Clutches* file lookup   // only when needed
+20 = 0x050 = *Clutches* file lookup   // only when needed. New file in AMS2 1.3.3.*
 
 28 = 0x058 = Turbo file lookup   // only when needed
-
-30 = 0x060
 
 38 = 0x068 = Gearbox file lookup // In all VDFM
 
@@ -326,6 +341,8 @@ Actual Data Map for this VDFM
 50 = 0x080 = Tyre file lookup    // In all VDFM
 
 B8 = 0x0E8 = KERS, DRS, Hybrid file lookup // only when needed
+
+C0 = 0x0F0 = push to pass
 
 ## END SECTION
 
