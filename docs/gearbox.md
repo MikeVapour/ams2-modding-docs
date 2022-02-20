@@ -6,9 +6,9 @@ Audi A1 Quattro Gearbox translation
 
 by **JDougNY**
 
-Version 1.1 - 2/13/2016 - Text revisions
+Version 1.1 - 2/13/2016 - Text revisions  for PC2
 
-Version 1.0 - 8/24/2015 - Initial Release
+Version 1.0 - 8/24/2015 - Initial Release for PC2
 
 This translation can be used to understand any gearbox file, no matter the amount of gears contained within the file.
 
@@ -44,7 +44,7 @@ ___
 
 ___
 
-## gear ratios data
+## Gear Ratios Data
 
 0x1C-0x20 = `60 88 DE 24 0F` // common data for every GDF.
 
@@ -135,7 +135,7 @@ ___
 
 Indicates the **end of primary gear data**.  Begin Bevel data.
 
-## final drive ratios
+## Final Drive Ratios
 
 !!! note
 

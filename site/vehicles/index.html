@@ -1,0 +1,1058 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.11">
+    
+    
+      
+        <title>vehicles vdfm - AMS2 modding docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.50e68009.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.e6a45f82.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7C&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:""}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#vehicles-vdfm" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="AMS2 modding docs" class="md-header__button md-logo" aria-label="AMS2 modding docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AMS2 modding docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              vehicles vdfm
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="pink"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href=".." class="md-tabs__link">
+      Welcome to AMS2 docs
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../chassis/" class="md-tabs__link">
+      chassis
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../chassis2/" class="md-tabs__link">
+      chassis: explainer
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../clutches/" class="md-tabs__link">
+      clutches
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../engine/" class="md-tabs__link">
+      engine
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../gearbox/" class="md-tabs__link">
+      gearbox
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../statistics/" class="md-tabs__link">
+      statistics mrdf
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../suspension/" class="md-tabs__link">
+      suspension
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../turbo/" class="md-tabs__link">
+      turbo
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  <li class="md-tabs__item">
+    <a href="./" class="md-tabs__link md-tabs__link--active">
+      vehicles vdfm
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="AMS2 modding docs" class="md-nav__button md-logo" aria-label="AMS2 modding docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    AMS2 modding docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Welcome to AMS2 docs
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chassis/" class="md-nav__link">
+        chassis
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chassis2/" class="md-nav__link">
+        chassis: explainer
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../clutches/" class="md-nav__link">
+        clutches
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../engine/" class="md-nav__link">
+        engine
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gearbox/" class="md-nav__link">
+        gearbox
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../statistics/" class="md-nav__link">
+        statistics mrdf
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../suspension/" class="md-nav__link">
+        suspension
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../turbo/" class="md-nav__link">
+        turbo
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          vehicles vdfm
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        vehicles vdfm
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#about" class="md-nav__link">
+    About
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#header" class="md-nav__link">
+    Header
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ams2-data-section" class="md-nav__link">
+    AMS2 Data Section
+  </a>
+  
+    <nav class="md-nav" aria-label="AMS2 Data Section">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#calls-to-physics-files" class="md-nav__link">
+    Calls to Physics Files
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wheel-and-tire-setup" class="md-nav__link">
+    Wheel and Tire Setup
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#offsets-b8-and-c0-in-data-map" class="md-nav__link">
+    Offsets B8 and C0 in Data Map
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#brake-discs" class="md-nav__link">
+    Brake Discs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unknown" class="md-nav__link">
+    Unknown
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backfire-frequency" class="md-nav__link">
+    Backfire Frequency
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unknown-cont" class="md-nav__link">
+    Unknown Cont.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#string-data-section" class="md-nav__link">
+    String Data Section
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-map-section-for-ams2" class="md-nav__link">
+    Data Map Section for AMS2
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Map Section for AMS2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-map-for-fordsgt" class="md-nav__link">
+    Data Map for Fordsgt
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#end-section" class="md-nav__link">
+    End Section
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#about" class="md-nav__link">
+    About
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#header" class="md-nav__link">
+    Header
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ams2-data-section" class="md-nav__link">
+    AMS2 Data Section
+  </a>
+  
+    <nav class="md-nav" aria-label="AMS2 Data Section">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#calls-to-physics-files" class="md-nav__link">
+    Calls to Physics Files
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wheel-and-tire-setup" class="md-nav__link">
+    Wheel and Tire Setup
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#offsets-b8-and-c0-in-data-map" class="md-nav__link">
+    Offsets B8 and C0 in Data Map
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#brake-discs" class="md-nav__link">
+    Brake Discs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unknown" class="md-nav__link">
+    Unknown
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backfire-frequency" class="md-nav__link">
+    Backfire Frequency
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unknown-cont" class="md-nav__link">
+    Unknown Cont.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#string-data-section" class="md-nav__link">
+    String Data Section
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-map-section-for-ams2" class="md-nav__link">
+    Data Map Section for AMS2
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Map Section for AMS2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-map-for-fordsgt" class="md-nav__link">
+    Data Map for Fordsgt
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#end-section" class="md-nav__link">
+    End Section
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+<h1 id="vehicles-vdfm">vehicles vdfm</h1>
+<h2 id="about">About</h2>
+<p>Translation for <em>Project Cars</em> <code>porsche_991_gt3rs.vdfm</code> by <strong>JDougNY</strong></p>
+<p>Translation for <em>AMS2</em> <code>fordsgt.vdfm</code> by <strong>GvsE</strong></p>
+<p>Version 1.0 - October 8, 2018 - Initial release for <em>Project Cars</em></p>
+<p>AMS2 additions by GvsE - February 13, 2022 - Initial release for <em>AMS2</em></p>
+<hr />
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Address locations are typical for all VDFM files up to the beginning of the string data.
+Use this translation as a guide to editing any VDFM file.</p>
+</div>
+<h2 id="header">Header</h2>
+<p>[HEADER - 0x000-0x02F (48 bytes)]</p>
+<p>0x010-0x013 = 98010000 = 408// (Integer) Byte Length of offset/data section. Count from 0x030-0x1C7</p>
+<hr />
+<p><strong>AMS2</strong>
+0x010-0x013 = 98010000 = 424// (Integer) Byte Length of offset/data section. Count from 0x030-0x1C7</p>
+<hr />
+<p>0x15 = 08 // (byte) number of empty bytes after data section.  0x1C8-0x1CF</p>
+<hr />
+<p><strong>AMS2</strong></p>
+<p>0x15 = 08 // (byte) number of empty bytes after data section.  0x1D8-0x1DF</p>
+<hr />
+<p>0x018-0x01B = 12000000 = 18 // (Integer) Byte length of String data Section. 0x1D0-0x1E1      </p>
+<p><strong>If additional bytes are inserted into the string data section, this register
+is incremented accordingly.</strong></p>
+<p>0x01D = 0E = 14 // (Byte) number of empty bytes after String data section. 0x1E2-0x1EF          </p>
+<p><strong>AMS2</strong></p>
+<p>0x01D = 01 = 1 // (Byte) number of empty bytes after String data section. 0x21F-0x21F</p>
+<p><strong>Any changes to String Data section requires a check of remaining empty bytes.
+There is always one zero byte after last entry.  Empty byte count does not include
+that last zero byte.</strong></p>
+<p><strong>AMS2</strong>
+0x020 = 30 = 48 // (Byte) Byte length of Data Map Offsets. 0x220-0x25F</p>
+<p>0x025 = 00 // (Byte) number of empty bytes after the Data Map Offsets.</p>
+<p>0x028 = 0C = 12 // (Byte) Byte length of end section. 0x2260-0x26B</p>
+<p>0x02D = 04 // (Byte) number of empty bytes after the end section. 0x26C-0x26F</p>
+<h2 id="ams2-data-section">AMS2 Data Section</h2>
+<h3 id="calls-to-physics-files">Calls to Physics Files</h3>
+<p><strong>[DATA SECTION - 0x030-0x1D8]</strong></p>
+<p>[Offset 08 of Data Map]</p>
+<p>0x038-0x03B = XX000000 = 0 // (Integer) Location in string data for Chassis filename (*.CDFBIN)</p>
+<hr />
+<p>[Offset 18 of Data Map]</p>
+<p>0x048-0x04B = XX000000 = 0 // (Integer) Location in string data for Engine filename (*.EDFBIN)</p>
+<hr />
+<p>[Offset 20 of Data Map]</p>
+<p><strong>PC2 location of turbo: this and the following entries change in AMS2 1.3.3.0</strong></p>
+<p>0x050-0x053 = XX000000 = // (Integer) <strong>PC2</strong> Location in string data for turbo filename (*.TBFBIN)
+  If Data Map does not call for Offset 20, then no turbo/supercharger is utilized.</p>
+<p><strong>AMS2</strong></p>
+<p>[Offset 20 of Data Map]</p>
+<p>0x050-0x053 = XX000000 = // (Integer) Location in string data for <strong>clutches</strong> filename (*.CBFBIN)
+  If Data Map does not call for Offset 20, then no clutches is utilized.</p>
+<p>for other AMS2 offsets see the <a href="#DATA-MAP-SECTION-for-AMS2">data map offsets section</a></p>
+<hr />
+<p>[Offset 28 of Data Map]</p>
+<p>0x058-0x05B = XX000000 = // (Integer)  Location in string data for turbo filename (*.TBFBIN)
+  If Data Map does not call for Offset 20, then no turbo/supercharger is utilized.</p>
+<hr />
+<p>[Offset 38 of Data Map]</p>
+<p>0x068-0x06B = XX000000 = 0 // (Integer) Location in string data for Gearbox filename (*.GDFBIN)0 // </p>
+<hr />
+<p>[Offset 40 of Data Map]</p>
+<p>0x070-0x073 = XX000000 = 0 // (Integer) Location in string data for Suspension filename (*.SDFBIN)</p>
+<hr />
+<p>[Offset 48 of Data Map]</p>
+<p>0x078-0x07B = XX000000 = 0 // (Integer) Location in string data for Collision filenames (*.XML)</p>
+<hr />
+<p>[Offset 50 of Data Map]</p>
+<p>0x080-0x083 = XX000000 = 0 // (Integer) Location in string data for Tyre filename (*.HDTBIN)</p>
+<h3 id="wheel-and-tire-setup">Wheel and Tire Setup</h3>
+<div class="admonition atention">
+<p class="admonition-title">Atention</p>
+<p>The vertical tyre/wheel offset is 1/2 of the tyre height value. Width and height in the VDFM matches the dimensions of tyre Mebs used.</p>
+<p>You would only adjust the lateral (inward/outward) offsets in VDFM, if you want to make those types of visual adjustments (when viewing car on the track).</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Offsets in VHF file are used when viewing the car in the menus. Offsets in VDFM are used when the car is on the track. So, when you have an offset issue in the menus, you adjust the VHF and when the issue is on the track you adjust the VDFM.</p>
+</div>
+<p>0x088-0x08B = B072483F = 0.783 // (Float) FL Wheel/Tyre lateral offset in Meters</p>
+<p>0x08C-0x08F = 3333B33E = 0.350 // (Float) FL Wheel/Tyre vertical offset in Meters</p>
+<p>0x090-0x093 = 1B2F9DBF = -1.228 // (Float) FL Wheel/Tyre fore/aft offset in Meters</p>
+<p>0x094-0x097 = B07248BF = -0.783 // (Float) FR Wheel/Tyre lateral offset in Meters</p>
+<p>0x098-0x09B = 3333B33E = 0.350 // (Float) FR Wheel/Tyre vertical offset in Meters</p>
+<p>0x09C-0x09F = 1B2F9DBF = -1.228 // (Float) FR Wheel/Tyre fore/aft offset in Meters</p>
+<p>0x0A0-0x0A3 = 4260453F = 0.771 // (Float) RL Wheel/Tyre lateral offset in Meters</p>
+<p>0x0A4-0x0A7 = 6DE7BB3E = 0.367 // (Float) RL Wheel/Tyre vertical offset in Meters</p>
+<p>0x0A8-0x0AB = 1B2F9D3F = 1.228 // (Float) RL Wheel/Tyre fore/aft offset in Meters</p>
+<p>0x0AC-0x0AF = 426045BF = -0.771 // (Float) RR Wheel/Tyre lateral offset in Meters</p>
+<p>0x0B0-0x0B3 = 6DE7BB3E = 0.367 // (Float) RR Wheel/Tyre vertical offset in Meters</p>
+<p>0x0B4-0x0B7 = 1B2F9D3F = 1.228 // (Float) RR Wheel/Tyre fore/aft offset in Meters</p>
+<p>0x0B8-0x0BB = 14AE873E = 0.265 // (Float) FL Tyre width in Meters</p>
+<p>0x0BC-0x0BF = 0E2D323F = 0.696 // (Float) FL Tyre height in Meters</p>
+<p>0x0C0-0x0C3 = 14AE873E = 0.265 // (Float) FR Tyre width in Meters</p>
+<p>0x0C4-0x0C7 = 0E2D323F = 0.696 // (Float) FR Tyre height in Meters</p>
+<p>0x0C8-0x0CB = 6666A63E = 0.325 // (Float) RL Tyre width in Meters</p>
+<p>0x0CC-0x0CF = 48E13A3F = 0.730 // (Float) RL Tyre height in Meters</p>
+<p>0x0D0-0x0D3 = 6666A63E = 0.325 // (Float) RR Tyre width in Meters</p>
+<p>0x0D4-0x0D7 = 48E13A3F = 0.730 // (Float) RR Tyre height in Meters</p>
+<h2 id="offsets-b8-and-c0-in-data-map">Offsets B8 and C0 in Data Map</h2>
+<p>0x0E8-0x0EB = XX000000 = // (Integer) Location in string data for KERS,DRS and Hybrid filename (*.BBFBIN)</p>
+<p>If Data Map does not call for Offset B8, then no *.BFFBIN is utilized.</p>
+<hr />
+<p>0x0C0-0x0C4 = XX000000 = // (Integer) Location in string data for <em>Push to Pass</em> filename</p>
+<p>If Data Map does not call for Offset C0, then no <em>Push to Pass</em> is utilized.</p>
+<hr />
+<h2 id="brake-discs">Brake Discs</h2>
+<p>0x138-0x013B = 00400344 = 525.0  // (Float) Brake Disc Glow Min (Start to glow slightly)</p>
+<p>0x13C-0x013F = 00007A44 = 1000.0 // (Float) Brake Disc Glow Max (Full glow effect)</p>
+<h2 id="unknown">Unknown</h2>
+<p>0x140-0x0144 = 0000803F = 1.0       // (Float) ??</p>
+<p>0x13C-0x013F = 0000803F = 1.0       // (Float) ??</p>
+<p>0x140-0x143 = 0000803F = 1.0 // (Float) ??</p>
+<p>0x144-0x147 = FFFFFFFF       // Beginning of Container...appears to be</p>
+<p>0x148-0x14B = 01000000 = 1   // (Integer) ??</p>
+<p>0x14C-0x14F = 01000000 = 1   // (Integer) ??</p>
+<p>0x150-0x153 = 01000000 = 1 // (Integer) ??</p>
+<p>0x154-0x157 = 01000000 = 1 // (Integer) ??</p>
+<p>0x158-0x15B = 01000000 = 1 // (Integer) ??</p>
+<p>0x15C-0x15F = 01000000 = 1 // (Integer) ??</p>
+<p>0x160-0x163 = 01000000 = 1 // (Integer) ??</p>
+<p>0x164-0x167 = 01000000 = 1 // (Integer) ??</p>
+<p>0x168-0x16B = 01000000 = 1 // (Integer) ??</p>
+<p>0x16C-0x16F = 01000000 = 1 // (Integer) ??</p>
+<p>0x170-0x173 = 01000000 = 1    // (Integer) ??</p>
+<p>0x174-0x177 = 01000000 = 1    // (Integer) ??</p>
+<p>0x178-0x17B = 01000000 = 1    // (Integer) ??</p>
+<p>0x17C-0x17F = 0000B841 = 23.0 // (Float) ??</p>
+<p>0x180-0x183 = 00000000 = 0</p>
+<p>0x184-0x187 = 0000803F = 1.0 // (Float) ??</p>
+<p>0x188-0x18B = 0000803F = 1.0 // (Float) ??</p>
+<p>0x18C-0x18F = 0000803F = 1.0 // (Float) ??</p>
+<p>0x190-0x193 = 0000803F = 1.0  // (Float) ??</p>
+<p>0x194-0x197 = 8FC2753E = 0.24 // (Float) ??</p>
+<p>0x198-0x19B = 8FC2753D = 0.06 // (Float) ??</p>
+<p>0x19C-0x19F = CDCC8C40 = 4.4  // (Float) ??</p>
+<p>0x1A0-0x1A3 = 00008040 = 4.0  // (Float) ??</p>
+<p>0x1A4-0x1A7 = C3F5A83E = 0.33 // (Float) ??</p>
+<p>0x1A8-0x1AB = 6666E63E = 0.45 // (Float) ??</p>
+<p>0x1AC-0x1AF = 6666863F = 1.05 // (Float) ??</p>
+<p>0x1B0-0x1B3 = CDCC4C3F = 0.8 // (Float) ??</p>
+<p>0x1B4-0x1B7 = 00000000 = 0</p>
+<p>0x1B8-0x1BB = 3333333F = 0.7 // (Float) ??</p>
+<p>0x1BC-0x1BF = 00000000 = 0</p>
+<p>0x1C0-0x1C3 = 0AD7233C = 0.01 // (Float) ??</p>
+<p>0x1C4-0x1C7 = 00000000 = 0</p>
+<p>0x1C8-0x1CB = 00000000 = 0</p>
+<h2 id="backfire-frequency">Backfire Frequency</h2>
+<p>0x1CC-0x1CF = 00 00 00 3F = 0.5 = backfire: left exhaust backfire frequency</p>
+<p>0x1D0-0x1D4 = CD CC 4C 3D =0.5 = backfire: right exhaust backfire frequency</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For backfire generally go with values between 0.1 and 0.5</p>
+</div>
+<hr />
+<h2 id="unknown-cont">Unknown Cont.</h2>
+<p>0x1D8-0x1D7 = unknown</p>
+<p>0x1D8-0x1DF = 8 empty bytes before the string section</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>From this point onward the adddresses can change, due to both the
+byte length of the String data section and the size of the data map section.
+No matter the addresses the code will flow the same as follows.</p>
+<p>String Data</p>
+<p>empty bytes for String data</p>
+<p>Data Map</p>
+<p>empty bytes for Data map (if any)</p>
+<p>End Section</p>
+<p>Empty bytes for End Section</p>
+</div>
+<h2 id="string-data-section">String Data Section</h2>
+<p>0x1E0-0x21E = fordsgt String Data Section.</p>
+<p><code>fordsgt</code> = 8 bytes (<code>fordsgt.</code> or <code>fordsgt00</code>) starts at byte 0 of the string section</p>
+<p><code>GT_Cup</code> clutches entry starts at byte 27</p>
+<p><code>chevrolet_corvette_c7_z06</code> tire starts at byte 37</p>
+<p>This string section has the total of 63 bytes. There is 1 empty byte before the Data Map Offsets section.</p>
+<p>Anything called by data map will look for this text for each physics file type.  There is always one "zero" byte after each entry in this section.</p>
+<p>0x21E-0x21F =  // empty bytes for String Data section.</p>
+<p>These bytes are ignored, unless offsets 0x018 and 0x01D are adjusted.</p>
+<h2 id="data-map-section-for-ams2">Data Map Section for AMS2</h2>
+<p>08 = 0x038 = Chassis file lookup // In all VDFM</p>
+<p>18 = 0x048 = Engine file lookup  // In all VDFM</p>
+<p>20 = 0x050 = <em>Clutches</em> file lookup   // only when needed. New file in AMS2 1.3.3.*</p>
+<p>28 = 0x058 = Turbo file lookup   // only when needed</p>
+<p>38 = 0x068 = Gearbox file lookup // In all VDFM</p>
+<p>40 = 0x070 = Suspension file lookup // In all VDFM</p>
+<p>48 = 0x078 = Collision file lookup  // In all VDFM</p>
+<p>50 = 0x080 = Tyre file lookup    // In all VDFM</p>
+<p>B8 = 0x0E8 = KERS, DRS, Hybrid file lookup // only when needed</p>
+<p>C0 = 0x0F0 = push to pass</p>
+<h3 id="data-map-for-fordsgt">Data Map for <code>Fordsgt</code></h3>
+<p>Starts at address 0x220 and ends at 0x25F </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The size of this section amounts to 64 bytes for <code>fordsgt</code>. This is referenced at address <code>0x020</code>
+To call more data (kers, etc.) increase the size of this section. Then adjust the size of the section at address <code>0x020</code>.</p>
+</div>
+<p><code>08 00 00 00 00 00 00 00 
+18 00 00 00 00 00 00 00
+20 00 00 00 00 00 00 00 
+28 00 00 00 00 00 00 00
+38 00 00 00 00 00 00 00 
+40 00 00 00 00 00 00 00
+48 00 00 00 00 00 00 00 
+50 00 00 00 00 00 00 00</code></p>
+<p>so:</p>
+<p>08 = 0x038 = Chassis file lookup </p>
+<p>18 = 0x048 = Engine file lookup  </p>
+<p>20 = 0x050 = Clutches file lookup  </p>
+<p>28 = 0x058 = Turbo file lookup </p>
+<p>38 = 0x068 = Gearbox file lookup </p>
+<p>40 = 0x070 = Suspension file lookup</p>
+<p>48 = 0x078 = Collision file lookup </p>
+<p>50 = 0x080 = Tyre file lookup </p>
+<h2 id="end-section">End Section</h2>
+<p>0x220-0x22F // end section and empty bytes for end section</p>
+<script src="https://hypothes.is/embed.js" async></script>
+
+              
+            </article>
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../turbo/" class="md-footer__link md-footer__link--prev" aria-label="Previous: turbo" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              turbo
+            </div>
+          </div>
+        </a>
+      
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.top", "search.highlight"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.092fa1f6.min.js"}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.5a9542cf.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,14 +1,17 @@
 # vehicles vdfm
 
-Project CARS/ AMS2
-Translation for porsche_991_gt3rs.vdfm
-By JDougNY
 
-Translation for fordsgt.vdfm
-by gvse
+## About
 
-Version 1.0 - October 8, 2018 - Initial release
-AMS2 additions by gvse
+Translation for *Project Cars* `porsche_991_gt3rs.vdfm` by **JDougNY**
+
+Translation for *AMS2* `fordsgt.vdfm` by **GvsE**
+
+Version 1.0 - October 8, 2018 - Initial release for *Project Cars*
+
+AMS2 additions by GvsE - February 13, 2022 - Initial release for *AMS2*
+
+___
 
 !!! note
 
@@ -18,7 +21,7 @@ AMS2 additions by gvse
 
 
 
-## header
+## Header
 
 [HEADER - 0x000-0x02F (48 bytes)]
 
@@ -68,9 +71,9 @@ that last zero byte.**
 0x02D = 04 // (Byte) number of empty bytes after the end section. 0x26C-0x26F
 
 
-## AMS2 data section
+## AMS2 Data Section
 
-### calls to physics files
+### Calls to Physics Files
 
 **[DATA SECTION - 0x030-0x1D8]**
 
@@ -135,12 +138,24 @@ ___
 
 [Offset 50 of Data Map]
 
-0x080-0x084 = XX000000 = 0 // (Integer) Location in string data for Tyre filename (*.HDTBIN)
+0x080-0x083 = XX000000 = 0 // (Integer) Location in string data for Tyre filename (*.HDTBIN)
 
 
 
 
-### wheel and tire setup
+### Wheel and Tire Setup
+
+!!! atention
+
+    The vertical tyre/wheel offset is 1/2 of the tyre height value. Width and height in the VDFM matches the dimensions of tyre Mebs used.
+    
+    You would only adjust the lateral (inward/outward) offsets in VDFM, if you want to make those types of visual adjustments (when viewing car on the track).
+
+
+!!! note
+
+    Offsets in VHF file are used when viewing the car in the menus. Offsets in VDFM are used when the car is on the track. So, when you have an offset issue in the menus, you adjust the VHF and when the issue is on the track you adjust the VDFM.
+
 
 0x088-0x08B = B072483F = 0.783 // (Float) FL Wheel/Tyre lateral offset in Meters
 
@@ -192,17 +207,17 @@ ___
 
 0x0C0-0x0C4 = XX000000 = // (Integer) Location in string data for *Push to Pass* filename
 
-If Data Map does not call for Offset C0, then no *.BFFBIN is utilized.
+If Data Map does not call for Offset C0, then no *Push to Pass* is utilized.
   
 ___
 
-## brake discs
+## Brake Discs
 
 0x138-0x013B = 00400344 = 525.0  // (Float) Brake Disc Glow Min (Start to glow slightly)
 
 0x13C-0x013F = 00007A44 = 1000.0 // (Float) Brake Disc Glow Max (Full glow effect)
 
-## unknown
+## Unknown
 
 0x140-0x0144 = 0000803F = 1.0       // (Float) ??
 
@@ -278,9 +293,23 @@ ___
 
 0x1C8-0x1CB = 00000000 = 0
 
-0x1CC-0x1CF = 00000000 = 0
+## Backfire Frequency
 
-0x1D0-0x1D7 = unknown
+0x1CC-0x1CF = 00 00 00 3F = 0.5 = backfire: left exhaust backfire frequency
+
+0x1D0-0x1D4 = CD CC 4C 3D =0.5 = backfire: right exhaust backfire frequency
+
+
+!!! note
+
+    For backfire generally go with values between 0.1 and 0.5
+
+
+___
+
+## Unknown Cont.
+
+0x1D8-0x1D7 = unknown
 
 0x1D8-0x1DF = 8 empty bytes before the string section
 
@@ -302,7 +331,7 @@ ___
 	
 	Empty bytes for End Section
 
-## STRING DATA SECTION
+## String Data Section
 
 0x1E0-0x21E = fordsgt String Data Section.
 
@@ -322,7 +351,7 @@ These bytes are ignored, unless offsets 0x018 and 0x01D are adjusted.
 
 
 
-## DATA MAP SECTION for AMS2
+## Data Map Section for AMS2
 
 08 = 0x038 = Chassis file lookup // In all VDFM
 
@@ -344,7 +373,46 @@ B8 = 0x0E8 = KERS, DRS, Hybrid file lookup // only when needed
 
 C0 = 0x0F0 = push to pass
 
-## END SECTION
+### Data Map for `Fordsgt`
+
+Starts at address 0x220 and ends at 0x25F 
+
+!!! note 
+
+    The size of this section amounts to 64 bytes for `fordsgt`. This is referenced at address `0x020`
+    To call more data (kers, etc.) increase the size of this section. Then adjust the size of the section at address `0x020`.
+
+`08 00 00 00 00 00 00 00 
+18 00 00 00 00 00 00 00
+20 00 00 00 00 00 00 00 
+28 00 00 00 00 00 00 00
+38 00 00 00 00 00 00 00 
+40 00 00 00 00 00 00 00
+48 00 00 00 00 00 00 00 
+50 00 00 00 00 00 00 00`
+
+so:
+
+08 = 0x038 = Chassis file lookup 
+
+18 = 0x048 = Engine file lookup  
+
+20 = 0x050 = Clutches file lookup  
+
+28 = 0x058 = Turbo file lookup 
+
+38 = 0x068 = Gearbox file lookup 
+
+40 = 0x070 = Suspension file lookup
+
+48 = 0x078 = Collision file lookup 
+
+50 = 0x080 = Tyre file lookup 
+
+
+
+
+## End Section
 
 0x220-0x22F // end section and empty bytes for end section
 
