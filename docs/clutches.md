@@ -12,7 +12,7 @@ ___
 ___
 
 
-*GT_Cup: discontinued*
+*GT_Cup: discontinued. Replaced with GT_911Cup*
 
 ___
 
