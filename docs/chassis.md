@@ -2942,8 +2942,11 @@ AMS2 `24 AB 02 4B 3C 52` BrakeOptimumTemp={integ}400.0, {integ}650.0
 new in ams2
 
 `22 6C 82 E4 02` = 2.91
+
 `22 EE 67 FD 55` = 0.31
+
 `24 5D 9E 9A 9F A2` = 0.0015, 3.4e-05
+
 `22 CE A0 75 6B` = 1.3e-06
 
 
@@ -2951,33 +2954,39 @@ new in ams2
 
 ## end of 4 corners `E0 91 FD 30 91` 
 
-pc2=324 bytes
+!!! attention
+
+    After the 4 corners PC2 has the section that counts 324 bytes. This section has been removed in AMS2
 
 
 !!! note
 
     when using road car chassis to make a race car, automatic tire selection will not work, unless you swap 6 bytes at the following address EDIT: only change the first byte from `2F` to `35`
 
-`84 4A 54 49 9B 4F` automatic tire selection for race cars (slicks, wets, etc.): the following 6 bytes enable auto tires `35 E6 5F C3 48 15`. EDIT: only change the first byte to `35`
+`84 4A 54 49 9B 4F` automatic tire selection for race cars (slicks, wets, etc.): the following 6 bytes enable auto tires `35 E6 5F C3 48 15`. EDIT: only change the first byte from e.g. `2F` to `35`
 
 
-last 15 bytes. total bytes - last 15 bytes is the third register at the top!
+### footer bytes. 
+
+!!! note
+
+    the total number of bytes varies; the number is defined in the third register at the top of the file: 0x0020-0x0023
 
 
 -324
 
-## end data
-camaro	 84 4A 54 49 9B 4F 	30 C6 6A 91 0D
-mclaren	 84 54 5E 4B 86 3A 	0F 83 79 86 4C 3F 28
-caymgt4	 84 51 5A 5D 8B 4F 	35 E6 5F C3 5F 28 69 29 0D
-por cup2 84 51 5A 5D 8B 4F 	35 E6 5F C3 5F 28 69 29 0D
-por R	 84 4A 54 49 9B 4F 	2F E6 5F C3 5F 28 69 29 0D
+### end data examples
 
-39-11=-28
+- camaro	 `84 4A 54 49 9B 4F` 	`30 C6 6A 91 0D`
 
-1980: camaro ss 4 corners
-2658: jag 4 corners
-2658-1980=678
+- mclaren	 `84 54 5E 4B 86 3A` 	`0F 83 79 86 4C 3F 28`
+
+- caymgt4	 `84 51 5A 5D 8B 4F` 	`35 E6 5F C3 5F 28 69 29 0D`
+
+- por cup2 `84 51 5A 5D 8B 4F` 	`35 E6 5F C3 5F 28 69 29 0D`
+
+- porsche R	 `84 4A 54 49 9B 4F` 	`2F E6 5F C3 5F 28 69 29 0D`
+
 
 
 <script src="https://hypothes.is/embed.js" async></script>

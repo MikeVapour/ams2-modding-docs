@@ -1271,12 +1271,25 @@
     end of 4 corners E0 91 FD 30 91
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#end-data" class="md-nav__link">
-    end data
+    <nav class="md-nav" aria-label="end of 4 corners E0 91 FD 30 91">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#footer-bytes" class="md-nav__link">
+    footer bytes.
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#end-data-examples" class="md-nav__link">
+    end data examples
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2319,12 +2332,25 @@
     end of 4 corners E0 91 FD 30 91
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#end-data" class="md-nav__link">
-    end data
+    <nav class="md-nav" aria-label="end of 4 corners E0 91 FD 30 91">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#footer-bytes" class="md-nav__link">
+    footer bytes.
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#end-data-examples" class="md-nav__link">
+    end data examples
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -4025,24 +4051,39 @@ AMS2 <code>24 AB 02 4B 3C 52</code> BrakeOptimumTemp={integ}400.0, {integ}650.0<
 <code>24 5D 9E 9A 9F A2</code> = 0.0015, 3.4e-05
 <code>22 CE A0 75 6B</code> = 1.3e-06</p>
 <h2 id="end-of-4-corners-e0-91-fd-30-91">end of 4 corners <code>E0 91 FD 30 91</code></h2>
-<p>pc2=324 bytes</p>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>After the 4 corners PC2 has the section that counts 324 bytes. This section has been removed in AMS2</p>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>when using road car chassis to make a race car, automatic tire selection will not work, unless you swap 6 bytes at the following address EDIT: only change the first byte from <code>2F</code> to <code>35</code></p>
 </div>
-<p><code>84 4A 54 49 9B 4F</code> automatic tire selection for race cars (slicks, wets, etc.): the following 6 bytes enable auto tires <code>35 E6 5F C3 48 15</code>. EDIT: only change the first byte to <code>35</code></p>
-<p>last 15 bytes. total bytes - last 15 bytes is the third register at the top!</p>
+<p><code>84 4A 54 49 9B 4F</code> automatic tire selection for race cars (slicks, wets, etc.): the following 6 bytes enable auto tires <code>35 E6 5F C3 48 15</code>. EDIT: only change the first byte from e.g. <code>2F</code> to <code>35</code></p>
+<h3 id="footer-bytes">footer bytes.</h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>the total number of bytes varies; the number is defined in the third register at the top of the file: 0x0020-0x0023</p>
+</div>
 <p>-324</p>
-<h2 id="end-data">end data</h2>
-<p>camaro   84 4A 54 49 9B 4F  30 C6 6A 91 0D
-mclaren  84 54 5E 4B 86 3A  0F 83 79 86 4C 3F 28
-caymgt4  84 51 5A 5D 8B 4F  35 E6 5F C3 5F 28 69 29 0D
-por cup2 84 51 5A 5D 8B 4F  35 E6 5F C3 5F 28 69 29 0D
-por R    84 4A 54 49 9B 4F  2F E6 5F C3 5F 28 69 29 0D</p>
-<p>39-11=-28</p>
-<p>1980: camaro ss 4 corners
-2658: jag 4 corners
-2658-1980=678</p>
+<h3 id="end-data-examples">end data examples</h3>
+<ul>
+<li>
+<p>camaro     <code>84 4A 54 49 9B 4F</code>    <code>30 C6 6A 91 0D</code></p>
+</li>
+<li>
+<p>mclaren    <code>84 54 5E 4B 86 3A</code>    <code>0F 83 79 86 4C 3F 28</code></p>
+</li>
+<li>
+<p>caymgt4    <code>84 51 5A 5D 8B 4F</code>    <code>35 E6 5F C3 5F 28 69 29 0D</code></p>
+</li>
+<li>
+<p>por cup2 <code>84 51 5A 5D 8B 4F</code>  <code>35 E6 5F C3 5F 28 69 29 0D</code></p>
+</li>
+<li>
+<p>porsche R  <code>84 4A 54 49 9B 4F</code>    <code>2F E6 5F C3 5F 28 69 29 0D</code></p>
+</li>
+</ul>
 <script src="https://hypothes.is/embed.js" async></script>
 
               
