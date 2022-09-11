@@ -1082,12 +1082,18 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#ai-differential-patch-14" class="md-nav__link">
-    AI Differential (patch 1.4)
-  </a>
+      </ul>
+    </nav>
   
 </li>
+      
+        <li class="md-nav__item">
+  <a href="#ai-differentials-patch-14" class="md-nav__link">
+    AI DIFFERENTIALS (Patch 1.4)
+  </a>
+  
+    <nav class="md-nav" aria-label="AI DIFFERENTIALS (Patch 1.4)">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#shifting_2" class="md-nav__link">
@@ -2150,12 +2156,18 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#ai-differential-patch-14" class="md-nav__link">
-    AI Differential (patch 1.4)
-  </a>
+      </ul>
+    </nav>
   
 </li>
+      
+        <li class="md-nav__item">
+  <a href="#ai-differentials-patch-14" class="md-nav__link">
+    AI DIFFERENTIALS (Patch 1.4)
+  </a>
+  
+    <nav class="md-nav" aria-label="AI DIFFERENTIALS (Patch 1.4)">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#shifting_2" class="md-nav__link">
@@ -3658,14 +3670,23 @@ clutch itself + <code>main shaft from engine to gearbox, if applicable</code> + 
 <hr />
 <p><code>28 F1 8A 0F 35</code>       DiffRearRatchetingSetting=                    // Rear Diff Ratcheting Setting.  No byte in code, which means zero(off)</p>
 <p>only clutch lsd = -112 || -116 || -118 || -114 || -115 || -116 || -113 || 194 -479=285</p>
-<h3 id="ai-differential-patch-14">AI Differential (patch 1.4)</h3>
+<h2 id="ai-differentials-patch-14">AI DIFFERENTIALS (Patch 1.4)</h2>
+<div class="admonition note">
+<p class="admonition-title">AI Diffs added in patch 1.4</p>
 <p>Reiza have added differential setting for AI in patch 1.4. this works well for all AI cars and aids their cornering:</p>
-<p><code>24 1D F5 6C 5C 83 00</code> 00, 0A D7 23 3C, 64 
-<code>20 53 D4 19 A9</code>: 19 
-<code>24 F2 FF 04 F5 83 00</code>: 00, 0A D7 23 3C, 64
-<code>20 79 F8 06 9F</code>: 28 
-<code>24 05 1D 5E 8B 03 00</code>: 00, 0A, 64
-<code>20 8B 90 E1 61</code>: 05</p>
+</div>
+<p><code>24 1D F5 6C 5C 83 00</code>: <code>00</code>, <code>0A D7 23 3C</code>, <code>64</code> </p>
+<hr />
+<p><code>20 53 D4 19 A9</code>: <code>19</code> </p>
+<hr />
+<p><code>24 F2 FF 04 F5 83 00</code>: <code>00</code>, <code>0A D7 23 3C</code>, <code>64</code></p>
+<hr />
+<p><code>20 79 F8 06 9F</code>: <code>28</code> </p>
+<hr />
+<p><code>24 05 1D 5E 8B 03 00</code>: <code>00</code>, <code>0A</code>, <code>64</code></p>
+<hr />
+<p><code>20 8B 90 E1 61</code>: <code>05</code></p>
+<hr />
 <p>The above can be translated into:</p>
 <ul>
 <li>0, 0.01, 100 (range)</li>

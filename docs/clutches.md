@@ -18,31 +18,42 @@ ___
 
 `GT_GT4`
 
-Example: gt4 racers
+!!! example
+
+    gt4 racers
+
 ___
 
 `GT_GT3`
 
-Example: gt3 racers, gte racers, 
+!!! example
+
+    gt3 racers, gte racers, 
 
 ___
 
 
 `GT_911Cup`
 
-Example: Porsche 911 Cup, Ultima street and race, 
+!!! example
+
+    Porsche 911 Cup, Ultima street and race, 
 
 ___
 
 
 `GT_StockV8`
 
-Example: camaro gt4r
+!!! example
+
+    camaro gt4r
 ___
 
 `Road_800Nm`
 
-example: Camaro_SS
+!!! example
+
+    Camaro_SS
 ___
 
 
@@ -58,13 +69,17 @@ ___
 
 `road_mclf1`
 
-Example: McLaren_F1_LM
+!!! example
+
+    McLaren_F1_LM
 ___
 
 
 `Race_GrA`
 
-Example: bmw_m3_e30_groupa
+!!! example
+
+    bmw_m3_e30_groupa
 
 ___
 
