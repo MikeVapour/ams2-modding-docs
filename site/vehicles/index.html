@@ -590,16 +590,23 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#data-map-section-for-ams2" class="md-nav__link">
-    Data Map Section for AMS2
+  <a href="#data-map-section-for-ams2-post-patch-14" class="md-nav__link">
+    Data Map Section for AMS2 (post patch 1.4)
   </a>
   
-    <nav class="md-nav" aria-label="Data Map Section for AMS2">
+    <nav class="md-nav" aria-label="Data Map Section for AMS2 (post patch 1.4)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#data-map-for-fordsgt" class="md-nav__link">
     Data Map for Fordsgt
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#patch-14-changes" class="md-nav__link">
+    Patch 1.4 changes:
   </a>
   
 </li>
@@ -734,16 +741,23 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#data-map-section-for-ams2" class="md-nav__link">
-    Data Map Section for AMS2
+  <a href="#data-map-section-for-ams2-post-patch-14" class="md-nav__link">
+    Data Map Section for AMS2 (post patch 1.4)
   </a>
   
-    <nav class="md-nav" aria-label="Data Map Section for AMS2">
+    <nav class="md-nav" aria-label="Data Map Section for AMS2 (post patch 1.4)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#data-map-for-fordsgt" class="md-nav__link">
     Data Map for Fordsgt
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#patch-14-changes" class="md-nav__link">
+    Patch 1.4 changes:
   </a>
   
 </li>
@@ -779,6 +793,7 @@
 <p>Translation for <em>AMS2</em> <code>fordsgt.vdfm</code> by <strong>GvsE</strong></p>
 <p>Version 1.0 - October 8, 2018 - Initial release for <em>Project Cars</em></p>
 <p>AMS2 additions by GvsE - February 13, 2022 - Initial release for <em>AMS2</em></p>
+<p>AMS2 update 1.4.1.3: new entry in data section and data map</p>
 <hr />
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -834,17 +849,24 @@ that last zero byte.</strong></p>
 <p>0x058-0x05B = XX000000 = // (Integer)  Location in string data for turbo filename (*.TBFBIN)
   If Data Map does not call for Offset 20, then no turbo/supercharger is utilized.</p>
 <hr />
+<div class="admonition important">
+<p class="admonition-title">New in Patch 1.4</p>
+<p><em>Failure model</em> filename replaces previous gearbox filenemae</p>
+</div>
 <p>[Offset 38 of Data Map]</p>
-<p>0x068-0x06B = XX000000 = 0 // (Integer) Location in string data for Gearbox filename (*.GDFBIN)0 // </p>
+<p>0x068-0x06B = XX000000 = 0 // Location in string data for failure model filename (*.GDFBIN)0 // </p>
 <hr />
 <p>[Offset 40 of Data Map]</p>
-<p>0x070-0x073 = XX000000 = 0 // (Integer) Location in string data for Suspension filename (*.SDFBIN)</p>
+<p>0x070-0x073 = XX000000 = 0 // (Integer) Location in string data for Gearbox filename (*.GDFBIN)0 //  </p>
 <hr />
 <p>[Offset 48 of Data Map]</p>
-<p>0x078-0x07B = XX000000 = 0 // (Integer) Location in string data for Collision filenames (*.XML)</p>
+<p>0x078-0x07B = XX000000 = 0 // (Integer) Location in string data for Suspension filename (*.SDFBIN)</p>
 <hr />
 <p>[Offset 50 of Data Map]</p>
-<p>0x080-0x083 = XX000000 = 0 // (Integer) Location in string data for Tyre filename (*.HDTBIN)</p>
+<p>0x080-0x083 = XX000000 =  0 // (Integer) Location in string data for Collision filenames (*.XML)</p>
+<hr />
+<p>[Offset 58 of Data Map]</p>
+<p>0x088-0x083 = XX000000 = 0 // (Integer) Location in string data for Tyre filename (*.HDTBIN)</p>
 <h3 id="wheel-and-tire-setup">Wheel and Tire Setup</h3>
 <div class="admonition atention">
 <p class="admonition-title">Atention</p>
@@ -955,15 +977,16 @@ No matter the addresses the code will flow the same as follows.</p>
 <p>Anything called by data map will look for this text for each physics file type.  There is always one "zero" byte after each entry in this section.</p>
 <p>0x21E-0x21F =  // empty bytes for String Data section.</p>
 <p>These bytes are ignored, unless offsets 0x018 and 0x01D are adjusted.</p>
-<h2 id="data-map-section-for-ams2">Data Map Section for AMS2</h2>
+<h2 id="data-map-section-for-ams2-post-patch-14">Data Map Section for AMS2 (post patch 1.4)</h2>
 <p>08 = 0x038 = Chassis file lookup // In all VDFM</p>
 <p>18 = 0x048 = Engine file lookup  // In all VDFM</p>
 <p>20 = 0x050 = <em>Clutches</em> file lookup   // only when needed. New file in AMS2 1.3.3.*</p>
 <p>28 = 0x058 = Turbo file lookup   // only when needed</p>
-<p>38 = 0x068 = Gearbox file lookup // In all VDFM</p>
-<p>40 = 0x070 = Suspension file lookup // In all VDFM</p>
-<p>48 = 0x078 = Collision file lookup  // In all VDFM</p>
-<p>50 = 0x080 = Tyre file lookup    // In all VDFM</p>
+<p>38 = 0x068 = Failure model // optional as of 1.4.1.3 (not necessary in patch 1.4.1.3; may become obligatory in the future)</p>
+<p>40 = 0x070 = Gearbox file lookup // In all VDFM</p>
+<p>48 = 0x078 = Suspension file lookup // In all VDFM</p>
+<p>50 = 0x080 = Collision file lookup  // In all VDFM</p>
+<p>58 = 0x080 = Tyre file lookup    // In all VDFM</p>
 <p>B8 = 0x0E8 = KERS, DRS, Hybrid file lookup // only when needed</p>
 <p>C0 = 0x0F0 = push to pass</p>
 <h3 id="data-map-for-fordsgt">Data Map for <code>Fordsgt</code></h3>
@@ -990,6 +1013,15 @@ To call more data (kers, etc.) increase the size of this section. Then adjust th
 <p>40 = 0x070 = Suspension file lookup</p>
 <p>48 = 0x078 = Collision file lookup </p>
 <p>50 = 0x080 = Tyre file lookup </p>
+<h3 id="patch-14-changes">Patch 1.4 changes:</h3>
+<p>08 = 0x038 = Chassis file lookup </p>
+<p>18 = 0x048 = Engine file lookup  </p>
+<p>20 = 0x050 = Clutches file lookup  </p>
+<p>28 = 0x058 = Turbo file lookup </p>
+<p>40 = 0x070 = Gearbox file lookup </p>
+<p>48 = 0x078 = Suspension file lookup</p>
+<p>50 = 0x080 = Collision file lookup </p>
+<p>58 = 0x088 = Tyre file lookup </p>
 <h2 id="end-section">End Section</h2>
 <p>0x220-0x22F // end section and empty bytes for end section</p>
 <script src="https://hypothes.is/embed.js" async></script>

@@ -11,6 +11,8 @@ Version 1.0 - October 8, 2018 - Initial release for *Project Cars*
 
 AMS2 additions by GvsE - February 13, 2022 - Initial release for *AMS2*
 
+AMS2 update 1.4.1.3: new entry in data section and data map
+
 ___
 
 !!! note
@@ -117,28 +119,49 @@ ___
   
 ___
 
+!!! important "New in Patch 1.4"
+
+	*Failure model* filename replaces previous gearbox file name
+
+
 [Offset 38 of Data Map]
 
-0x068-0x06B = XX000000 = 0 // (Integer) Location in string data for Gearbox filename (*.GDFBIN)0 // 
+0x068-0x06B = XX000000 = 0 // Location in string data for failure model filename (*.GDFBIN)
+
+
+
+
+
 
 ___
 
 [Offset 40 of Data Map]
 
-0x070-0x073 = XX000000 = 0 // (Integer) Location in string data for Suspension filename (*.SDFBIN)
+0x070-0x073 = XX000000 = 0 // (Integer) Location in string data for Gearbox filename (*.GDFBIN)0 //  
+
+
+
 
 
 ___
 
 [Offset 48 of Data Map]
 
-0x078-0x07B = XX000000 = 0 // (Integer) Location in string data for Collision filenames (*.XML)
+0x078-0x07B = XX000000 = 0 // (Integer) Location in string data for Suspension filename (*.SDFBIN)
 
 ___
 
 [Offset 50 of Data Map]
 
-0x080-0x083 = XX000000 = 0 // (Integer) Location in string data for Tyre filename (*.HDTBIN)
+0x080-0x083 = XX000000 =  0 // (Integer) Location in string data for Collision filenames (*.XML)
+
+
+_____
+
+
+[Offset 58 of Data Map]
+
+0x088-0x08B = XX000000 = 0 // (Integer) Location in string data for Tyre filename (*.HDTBIN)
 
 
 
@@ -351,7 +374,7 @@ These bytes are ignored, unless offsets 0x018 and 0x01D are adjusted.
 
 
 
-## Data Map Section for AMS2
+## Data Map Section for AMS2 (post patch 1.4)
 
 08 = 0x038 = Chassis file lookup // In all VDFM
 
@@ -361,19 +384,25 @@ These bytes are ignored, unless offsets 0x018 and 0x01D are adjusted.
 
 28 = 0x058 = Turbo file lookup   // only when needed
 
-38 = 0x068 = Gearbox file lookup // In all VDFM
+38 = 0x068 = Failure model // 
 
-40 = 0x070 = Suspension file lookup // In all VDFM
+!!! note
 
-48 = 0x078 = Collision file lookup  // In all VDFM
+	Optional as of 1.4.1.3 (not necessary in patch 1.4.1.3; may become obligatory in the future)
 
-50 = 0x080 = Tyre file lookup    // In all VDFM
+40 = 0x070 = Gearbox file lookup // In all VDFM
+
+48 = 0x078 = Suspension file lookup // In all VDFM
+
+50 = 0x080 = Collision file lookup  // In all VDFM
+
+58 = 0x080 = Tyre file lookup    // In all VDFM
 
 B8 = 0x0E8 = KERS, DRS, Hybrid file lookup // only when needed
 
 C0 = 0x0F0 = push to pass
 
-### Data Map for `Fordsgt`
+### Data Map for `Fordsgt` Patch 1.3
 
 Starts at address 0x220 and ends at 0x25F 
 
@@ -382,7 +411,8 @@ Starts at address 0x220 and ends at 0x25F
     The size of this section amounts to 64 bytes for `fordsgt`. This is referenced at address `0x020`
     To call more data (kers, etc.) increase the size of this section. Then adjust the size of the section at address `0x020`.
 
-`08 00 00 00 00 00 00 00 
+```
+08 00 00 00 00 00 00 00 
 18 00 00 00 00 00 00 00
 20 00 00 00 00 00 00 00 
 28 00 00 00 00 00 00 00
@@ -408,6 +438,33 @@ so:
 48 = 0x078 = Collision file lookup 
 
 50 = 0x080 = Tyre file lookup 
+
+
+### Data Map for `Fordsgt` Patch 1.4
+
+the code:
+
+```
+08 00 00 00 00 00 00 00 18 00 00 00 00 00 00 00 20 00 00 00 00 00 00 00 28 00 00 00 00 00 00 00 40 00 00 00 00 00 00 00 48 00 00 00 00 00 00 00 50 00 00 00 00 00 00 00 58 00 00 00 00 00 00 00
+```
+
+
+08 = 0x038 = Chassis file lookup 
+
+18 = 0x048 = Engine file lookup  
+
+20 = 0x050 = Clutches file lookup  
+
+28 = 0x058 = Turbo file lookup 
+
+40 = 0x070 = Gearbox file lookup 
+
+48 = 0x078 = Suspension file lookup
+
+50 = 0x080 = Collision file lookup 
+
+58 = 0x088 = Tyre file lookup 
+
 
 
 
