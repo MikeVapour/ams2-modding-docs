@@ -2252,6 +2252,33 @@ ___
 
 only clutch lsd = -112 || -116 || -118 || -114 || -115 || -116 || -113 || 194 -479=285
 
+### AI Differential (patch 1.4)
+
+Reiza have added differential setting for AI in patch 1.4. this works well for all AI cars and aids their cornering:
+
+
+`24 1D F5 6C 5C 83 00` 00, 0A D7 23 3C, 64 
+`20 53 D4 19 A9`: 19 
+`24 F2 FF 04 F5 83 00`: 00, 0A D7 23 3C, 64
+`20 79 F8 06 9F`: 28 
+`24 05 1D 5E 8B 03 00`: 00, 0A, 64
+`20 8B 90 E1 61`: 05
+
+The above can be translated into:
+
+- 0, 0.01, 100 (range)
+- 25 (setting)
+- 0, 0.01, 100 (range)
+- 40 (setting)
+- 0, 10, 100 (range)
+- 5 (setting)
+
+
+You can just insert this code (54 bytes):
+
+```
+24 1D F5 6C 5C 83 00 00 0A D7 23 3C 64 20 53 D4 19 A9 19 24 F2 FF 04 F5 83 00 00 0A D7 23 3C 64 20 79 F8 06 9F 28 24 05 1D 5E 8B 03 00 00 0A 64 20 8B 90 E1 61 05
+```
 
 ###  shifting 
 
